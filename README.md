@@ -31,6 +31,10 @@ The initial concept for the app came from a coding challenge via the [devjam](in
 
  I am using these challenges to learn/get more familiar with React and this project was built with Next.js. I took this opportunity to explore Tailwind CSS as well.
 
+ ### Dependencies
+ - Next.js 
+ - Tailwind CSS
+
  ## What I've Learned
 
 ## What's next?
