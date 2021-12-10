@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiz App
 
-## Getting Started
+## The Goal
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This app is still in the early phases of development, there is not yet a Live Demo website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## User Stories
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The initial concept for the app came from a coding challenge via the [devjam](insert link) group:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Dev Jam User Stories
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+📔 User Stories
+1. [] User can start the quiz by pressing a button
+2. [] User can see a question with 4 possible answers
+3. [] After selecting an answer, display the next question to the User. Do this until the quiz is finished
+4. [] At the end, the User can see the following statistics
+    - Time it took to finish the quiz
+    - How many correct answers did he get
+    - A message showing if he passed or failed the quiz
 
-## Learn More
+⭐ Bonus features (optional)
+1. [] User can share the result of a quiz on social media
+2. [] Add multiple quizzes to the application. User can select which one to take
+3. [] User can create an account and have all the scores saved in his dashboard. User can complete a quiz multiple times
+4. [] User can create their own quizzes
 
-To learn more about Next.js, take a look at the following resources:
+ ## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ I am using these challenges to learn/get more familiar with React and this project was built with Next.js. I took this opportunity to explore Tailwind CSS as well.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ ## What I've Learned
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## What's next?
