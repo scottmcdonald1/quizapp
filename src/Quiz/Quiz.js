@@ -7,6 +7,9 @@ export default function Quiz() {
     const activeQuestion = quizData[activeQuestionIndex];
     const isComplete = activeQuestionIndex >= (quizData.length -1);
 
+    const isLastQuestion = activeQuestionIndex >= (quizData.length -1);
+    const nextButton = isLastQuestion ? "Finish Quiz" : "Next Question";
+
     const questionText = activeQuestion.question;
     const answerArray = activeQuestion.incorrect_answers;
     const correctAnswer = activeQuestion.correct_answer;
@@ -29,7 +32,7 @@ export default function Quiz() {
                 <button onClick={handleClick}
                 className="ring-0 ring-ombreNaturelle31 hover:ring-1 hover:bg-vert59 hover:text-outremerGris text-ombreNaturelle31/80 m-1 py-2 px-3 border border-ombreNaturelle31 rounded transition-all" 
                 >
-                Next Question
+                {nextButton}
                 </button>
             </div> 
         )
@@ -56,17 +59,20 @@ function Answers(props) {
         answer = answer.replaceAll("&#039;", "")
         return (
             <li key={key} className="w-full">
-                <button
-                className="w-full ring-0 ring-ombreNaturelle31 hover:ring-1 hover:bg-vertOliveVif hover:text-outremerGris text-ombreNaturelle31/80 m-1 py-2 px-3 border border-ombreNaturelle31 rounded transition-all" 
-                >
-                {answer}
-                </button>
+                {/* <label htmlFor={key} className="w-full ring-0 ring-ombreNaturelle31 hover:ring-1 hover:bg-vertOliveVif hover:text-outremerGris text-ombreNaturelle31/80 m-1 py-2 px-3 border border-ombreNaturelle31 rounded transition-all"
+                > 
+                    <input type="radio" id={key} value={answer} name="form" className="form-radio mx-2" />
+
+                    {answer}
+                </label> */}
+
+                <button type="button" className="w-full rounded px-6 py-2.5 text-ombreNaturelle31/75 font-montserrat leading-tight hover:border-2 hover:border-vert59 border-2 border-ombreNaturelle31/50 focus:bg-vert59 focus:border-2 focus-border-ombreNaturelle31/50 focus:text-white transition duration-150 ease-in-out">{answer}</button>
             </li>
         )
     })
 
     return (
-        <ul className="grid grid-cols-2 gap-4 my-11">{answersList}</ul>
+        <form><ul className="grid grid-cols-2 gap-4 my-11">{answersList}</ul></form>
     )
 }
 

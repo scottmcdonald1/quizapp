@@ -13,6 +13,7 @@ module.exports = {
       }
     },
     colors: {
+      white: "rgba(255,255,255)",
       vert59: "rgb(66,143,112)",
       orangeVif: "rgb(196,94,58)",
       ombreNaturelle31: "rgb(90,85,80)",
