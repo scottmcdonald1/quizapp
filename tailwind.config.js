@@ -17,6 +17,7 @@ module.exports = {
       orangeVif: "rgb(196,94,58)",
       ombreNaturelle31: "rgb(90,85,80)",
       vertAnglaisPale: "rgb(190,203,183)",
+      outremerGris: "rgb(217,225,221)",
     },
     container: {
       center: true,
