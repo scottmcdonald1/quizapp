@@ -8,6 +8,7 @@ export default function Quiz() {
     const quizLength = quizData.length;
 
     const [correctUserAnswers, setCorrectUserAnswers] = useState(0);
+    const percentage = (correctUserAnswers / quizLength) * 100;
     const [isComplete, setIsComplete] = useState(false);
 
     const isLastQuestion = activeQuestionIndex >= (quizLength -1);
@@ -47,13 +48,38 @@ export default function Quiz() {
             </div> 
         )
     } else {
-        return (
-            <div className="flex flex-col mt-32 items-center w-full h-screen">
 
-                <h1>Great job!</h1>
-                <p>You answered {correctUserAnswers} out of {quizLength} correctly</p>
-            </div>
-        )
+        if (percentage >= 70) {
+            return (
+                <div className="flex flex-col mt-32 items-center w-full h-screen">
+
+                    <div className="rounded-full flex flex-col justify-center items-center border-2 border-orangeVif w-52 h-52 my-8">
+                        <h1 className="font-bebasNeue text-8xl text-ombreNaturelle31 font-bold">
+                        {percentage}<span className="text-vert59">%</span>
+                        </h1>
+                        <span className="font-bebasNeue text-2xl text-vert59">[you passed]</span>
+                    </div>
+
+                    <h1 className="font-bebasNeue text-5xl text-vert59">Great job!</h1>
+                    <h1 className="font-abel text-3xl text-ombreNaturelle31">You answered <span className="text-vert59">{correctUserAnswers}</span> out of <span className="text-vert59">{quizLength}</span> correctly</h1>
+                </div>
+            )
+        } else {
+            return (
+                <div className="flex flex-col mt-32 items-center w-full h-screen">
+                    <div className="rounded-full flex flex-col justify-center items-center border-2 border-orangeVif w-52 h-52 my-8">
+                        <h1 className="font-bebasNeue text-8xl text-ombreNaturelle31 font-bold">
+                        {percentage}<span className="text-vert59">%</span>
+                        </h1>
+                        <span className="font-bebasNeue text-2xl text-orangeVif">[you failed]</span>
+                    </div>
+                    
+                    <h1 className="font-bebasNeue text-5xl text-vert59">Too bad... </h1>
+                    <h1 className="font-abel text-3xl text-ombreNaturelle31">You answered <span className="text-vert59">{correctUserAnswers}</span> out of <span className="text-vert59">{quizLength}</span> correctly</h1>
+                </div>
+            )
+        }
+        
     }
 }
 

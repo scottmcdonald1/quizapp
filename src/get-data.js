@@ -85,3 +85,5 @@ export function GetData() {
         ] }["results"]
     )
 }
+
+// URL FOR REFERENCE: https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple
