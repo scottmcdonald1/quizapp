@@ -13,13 +13,13 @@ The initial concept for the app came from a coding challenge via the [devjam](in
 ### Dev Jam User Stories
 
 📔 User Stories
-1. [] User can start the quiz by pressing a button
-2. [] User can see a question with 4 possible answers
-3. [] After selecting an answer, display the next question to the User. Do this until the quiz is finished
+1. ✅ User can start the quiz by pressing a button
+2. ✅ User can see a question with 4 possible answers
+3. ✅ After selecting an answer, display the next question to the User. Do this until the quiz is finished
 4. [] At the end, the User can see the following statistics
     - Time it took to finish the quiz
-    - How many correct answers did he get
-    - A message showing if he passed or failed the quiz
+    ✅ How many correct answers did he get
+    ✅ A message showing if he passed or failed the quiz
 
 ⭐ Bonus features (optional)
 1. [] User can share the result of a quiz on social media

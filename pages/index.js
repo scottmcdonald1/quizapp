@@ -7,22 +7,15 @@ export default function Home() {
 
   const router = useRouter();
 
-  const handleChange = (e) => {
-    console.log(e.target.type);
-  }
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const amount = e.target.numberOfQuestions.value;
     const difficulty = e.target.difficulty.value;
 
-    if (amount > 50 || amount < 1) {
-      alert('Quiz Must be between 1 and 50 questions!')
-    } else {
-      // let path = `/test?amount=${amount}&difficulty=${difficulty}`;
-      let path = `/test`
-      router.push(path);
-    }
+    let path = `/test?amount=${amount}&difficulty=${difficulty}`;
+    // let path = `/test`
+    router.push(path);
+
   }
 
   return (
@@ -42,25 +35,26 @@ export default function Home() {
         <div className="border border-orangeVif rounded m-4 p-8">
           <form onSubmit={handleFormSubmit} id="generateQuizForm" className="flex flex-col">
 
+            {/* TODO: allow users to select number of questions provided by API */}
             <label className="block">
               <span className="block text-sm font-medium text-ombreNaturelle31/70">Number of Questions</span>
               <input 
               id="numberOfQuestions"
               name="numberOfQuestions"
               type="number" 
-              onChange={handleChange}
               className="form-input rounded m-1 peer w-full"
               defaultValue="10"
               />
               <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm"></p>
             </label>
 
+            {/* TODO: Allow users to choose difficulty provided by API */}
             <label className="block">
               <span className="block text-sm font-medium text-ombreNaturelle31/70">Difficulty</span>
               <select id="difficulty" name="difficulty" className="form-select m-1 rounded peer w-full">
-                <option>Easy</option>
-                <option>Medium</option>
-                <option>Hard</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
               </select>
               <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm"></p>
             </label>
@@ -80,7 +74,7 @@ export default function Home() {
             form="generateQuizForm"
             className="w-full rounded-full shadow-sharp hover:shadow-sharpHover px-6 py-2.5 text-ombreNaturelle31/60 font-montserrat leading-tight hover:border-2 hover:border-vert59 hover:text-ombreNaturelle31/90 border-2 border-ombreNaturelle31/50 active:bg-vert59 active:text-white active:border-2 active:border-ombreNaturelle31/50 transition duration-150 ease-in-out"
             >
-            Let's Get Quizzy
+            Start Quiz
             </button>
           </form>
         </div>

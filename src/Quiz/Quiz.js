@@ -1,23 +1,29 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { GetData } from "../get-data";
+import { formatText } from "../formatText.js";
 
-export default function Quiz() {
-    const quizData = GetData();
+export default function Quiz(props) {
+
+    const quizData = props.questions;
+    // console.log(quizData)
+
+    // const jsonData = JSON.stringify(props.questions.results)
+    // console.log(jsonData)
+
     const [activeQuestionIndex, setactiveQuestionIndex] = useState(0);
+    const [correctUserAnswers, setCorrectUserAnswers] = useState(0);
+    const [isComplete, setIsComplete] = useState(false);
+
     const activeQuestion = quizData[activeQuestionIndex];
     const quizLength = quizData.length;
 
-    const [correctUserAnswers, setCorrectUserAnswers] = useState(0);
-    const percentage = (correctUserAnswers / quizLength) * 100;
-    const [isComplete, setIsComplete] = useState(false);
+    const percentage = Math.round((correctUserAnswers / quizLength) * 100);
 
     const isLastQuestion = activeQuestionIndex >= (quizLength -1);
 
-    const questionText = activeQuestion.question;
-    const answerArray = activeQuestion.incorrect_answers;
-
+    const questionText = formatText(activeQuestion.question)
     const correctAnswer = activeQuestion.correct_answer;
-    answerArray.push(correctAnswer);
+    const answers = [...activeQuestion.incorrect_answers, correctAnswer];
 
     const handleQuestionSubmit = (e) => {
         if (isLastQuestion) {
@@ -41,7 +47,7 @@ export default function Quiz() {
                 questionIndex={activeQuestionIndex} 
                 quizLength={quizLength}
                 question={questionText} 
-                answers={answerArray} 
+                answers={answers} 
                 handleQuestionSubmit={handleQuestionSubmit}
                 />
 
@@ -83,12 +89,25 @@ export default function Quiz() {
     }
 }
 
+function randomizeOrder(arr) {
+    const numberOfRotations = Math.random() * 10;
+
+    for (let i = 0; i < numberOfRotations; i++) {
+        let firstEntry = arr.shift();
+        arr.push(firstEntry);
+    }
+    return arr;
+}
+
 function Answers(props) {
     const answers = props.answers;
     let key = 0;
+
+    randomizeOrder(answers);
      
     const answersList = answers.map((answer) => {
         key++;
+        answer = formatText(answer);
         return (
 
             <button 
@@ -126,3 +145,5 @@ function Question(props) {
         </div>
     )
 }
+
+
