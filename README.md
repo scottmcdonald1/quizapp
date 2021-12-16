@@ -2,7 +2,7 @@
 
 ## The Goal
 
-Create a Quiz App as per the parameters given below
+Create a Quiz App as per the parameters provided by the [devjam](https://devjam.vercel.app/project/Quiz-App-10) group shown below. This was my second project with the devjam group and I wanted to invest more time and energy into this one as I really enjoyed the process from my first. The major goal for me was to explore Tailwind CSS and make (at the very minimum) a more functional project than the last. As a direct result, the app itself isn't exactly where I'd want it to be aesthetically, but that's okay! I am proud of this app and definitely want to revisit and continue to work on it in the future.
 
 ## Live Demo
 
@@ -38,9 +38,20 @@ New User Stories
  I am using these challenges to learn/get more familiar with React and this project was built with Next.js. I took this opportunity to explore Tailwind CSS as well.
 
  ### Dependencies
+
  - [Next.js ](https://nextjs.org/)
  - [Tailwind CSS](https://tailwindcss.com/)
 
  ## What I've Learned
 
+- Tailwind CSS -- this was my first time using it, and I have to say I fell in love with it. I have used bootstrap before, but the customization in tailwind is so nice and intuitive. Will definitely be using it again.
+- API integration with path parameters and Server Side Props
+- How difficult it is to find and replace special HTML entities (I keep finding new ones -- look at /src/formatText.js for a laugh)
+- This is my second major React/Next.js app so continued learning of how components fit together as well as the use of hooks (which I used a lot more in this project than my first)
+
 ## What's next?
+
+- I still need to build out the quizTimer component 
+- Create user accounts to allow users to keep track of the quizzes they've taken
+- When I first started this project I wanted to allow users to create a quiz of their own. Obviously, due to time restrictions, I wasn't able to make it that far, but I do think I will come back to this project.
+- There is a lot of code I would like to clean up, make more abstract and modular -- particularly the entire Quiz.js file.

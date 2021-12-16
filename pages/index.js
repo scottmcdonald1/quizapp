@@ -1,7 +1,6 @@
 import React from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
-import { useState } from "react/cjs/react.development"
 
 export default function Home() {
 
@@ -18,12 +17,10 @@ export default function Home() {
       let path = category === 'any' ? `/test?amount=${amount}&difficulty=${difficulty}` : `/test?amount=${amount}&difficulty=${difficulty}&category=${category}`;
       router.push(path);
     }
-
   }
 
   return (
     <>
-
       <Head>
         <title>QuizApp</title>
       </Head>
@@ -38,7 +35,6 @@ export default function Home() {
         <div className="border border-orangeVif rounded m-4 p-8">
           <form onSubmit={handleFormSubmit} id="generateQuizForm" className="flex flex-col">
 
-            {/* TODO: allow users to select number of questions provided by API */}
             <label className="block">
               <span className="block text-sm font-medium text-ombreNaturelle31/70">Number of Questions</span>
               <input 
@@ -51,7 +47,6 @@ export default function Home() {
               <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm"></p>
             </label>
 
-            {/* TODO: Allow users to choose difficulty provided by API */}
             <label className="block">
               <span className="block text-sm font-medium text-ombreNaturelle31/70">Difficulty</span>
               <select id="difficulty" name="difficulty" className="form-select m-1 rounded peer w-full">
@@ -62,7 +57,6 @@ export default function Home() {
               <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm"></p>
             </label>
 
-            {/* TODO: Allow users to choose category provided by API */}
             <label className="block">
               <span className="block text-sm font-medium text-ombreNaturelle31/70">Category</span>
               <select id="category" name="category" className="form-select m-1 rounded peer w-full">
@@ -89,7 +83,6 @@ export default function Home() {
         </div>
 
       </div>
-
     </>
   )
 }
