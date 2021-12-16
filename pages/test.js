@@ -32,8 +32,13 @@ export async function getServerSideProps({query}) {
     // await delay();
     const amount = query.amount;
     const difficulty = query.difficulty;
+    const category = query.category = null ? null :query.category
 
-    const res = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=9&difficulty=${difficulty}&type=multiple`);
+    const fetchLink = category != null ? 
+        `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple` :
+        `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
+
+    const res = await fetch(fetchLink);
     // const res = await fetch(`https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`);
     const data = await res.json();
 

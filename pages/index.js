@@ -11,11 +11,11 @@ export default function Home() {
     e.preventDefault();
     const amount = e.target.numberOfQuestions.value;
     const difficulty = e.target.difficulty.value;
+    const category = e.target.category.value;
     if (amount > 50 || amount < 1) {
       alert('Number of Questions must be between 1 and 50!')
     } else {
-      let path = `/test?amount=${amount}&difficulty=${difficulty}`;
-      // let path = `/test`
+      let path = category === 'any' ? `/test?amount=${amount}&difficulty=${difficulty}` : `/test?amount=${amount}&difficulty=${difficulty}&category=${category}`;
       router.push(path);
     }
 
@@ -63,14 +63,20 @@ export default function Home() {
             </label>
 
             {/* TODO: Allow users to choose category provided by API */}
-            {/* <label className="block">
+            <label className="block">
               <span className="block text-sm font-medium text-ombreNaturelle31/70">Category</span>
-              <select className="form-select m-1 rounded peer w-full">
-                <option>Any Category</option>
-                <option>General Knowledge</option>
+              <select id="category" name="category" className="form-select m-1 rounded peer w-full">
+                <option value="any">Any Category</option>
+                <option value="9">General Knowledge</option>
+                <option value="10">Entertainment: Books</option>
+                <option value="11">Entertainment: Film</option>
+                <option value="12">Entertainment: Music</option>
+                <option value="13">Entertainment: Theatre</option>
+                <option value="14">Entertainment: TV</option>
+                <option value="15">Entertainment: Video Games</option>
               </select>
               <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm"></p>
-            </label> */}
+            </label>
 
             <button 
             type="submit"
