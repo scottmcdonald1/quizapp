@@ -25,13 +25,13 @@ The initial concept for the app came from a coding challenge via the [devjam](ht
 
 ⭐ Bonus features (optional)
 1. [] User can share the result of a quiz on social media
-2. ✅ Add multiple quizzes to the application. User can select which one to take (* See note below)
+2. ✅ Add multiple quizzes to the application. User can select which one to take (** See note below)
 3. [] User can create an account and have all the scores saved in his dashboard. User can complete a quiz multiple times
 4. [] User can create their own quizzes
 
 New User Stories 
 1. ✅ User can view details of quiz with correct and incorrect answers marked.
-2. ✅ (*) quizzes are randomly generated, however user can select number of questions, difficulty, and category
+2. ✅ ** quizzes are randomly generated, however user can select number of questions, difficulty, and category
 
  ## Tech Stack
 
