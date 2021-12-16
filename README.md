@@ -27,6 +27,9 @@ The initial concept for the app came from a coding challenge via the [devjam](in
 3. [] User can create an account and have all the scores saved in his dashboard. User can complete a quiz multiple times
 4. [] User can create their own quizzes
 
+New User Stories 
+1. ✅ User can view details of quiz
+
  ## Tech Stack
 
  I am using these challenges to learn/get more familiar with React and this project was built with Next.js. I took this opportunity to explore Tailwind CSS as well.

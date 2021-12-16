@@ -28,7 +28,7 @@ export default function Home() {
         <title>QuizApp</title>
       </Head>
 
-      <div className="flex flex-col justify-center items-center w-screen h-screen">
+      <div className="flex flex-col justify-center items-center w-full h-screen">
 
         <div className="border border-orangeVif rounded mx-4 p-8">
           <h1 className="font-bebasNeue text-5xl text-ombreNaturelle31 font-bold pointer-events-none">

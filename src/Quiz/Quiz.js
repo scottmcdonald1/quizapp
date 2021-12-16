@@ -109,7 +109,7 @@ function Answers(props) {
     })
 
     return (
-        <div className="grid grid-cols-2 gap-4 my-11">{answersList}</div>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2  gap-4 my-11">{answersList}</div>
     )
 }
 
@@ -196,7 +196,7 @@ function QuizResultsDetails(props) {
                     <div 
                     className="w-full flex justify-center items-center rounded-full shadow-sharpHover px-6 py-2.5 text-ombreNaturelle31/90 font-montserrat leading-tight border-2 border-vert59"
                     >
-                    {question.correct_answer}
+                    {formatText(question.correct_answer)}
                     </div>
                 </div>
             </div>
