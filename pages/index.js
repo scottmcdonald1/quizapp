@@ -11,10 +11,13 @@ export default function Home() {
     e.preventDefault();
     const amount = e.target.numberOfQuestions.value;
     const difficulty = e.target.difficulty.value;
-
-    let path = `/test?amount=${amount}&difficulty=${difficulty}`;
-    // let path = `/test`
-    router.push(path);
+    if (amount > 50 || amount < 1) {
+      alert('Number of Questions must be between 1 and 50!')
+    } else {
+      let path = `/test?amount=${amount}&difficulty=${difficulty}`;
+      // let path = `/test`
+      router.push(path);
+    }
 
   }
 
