@@ -191,7 +191,7 @@ function QuizResultsDetails(props) {
         return (
             <div className="border-y border-ombreNaturelle31/60 my-6 p-4">
                 <h2 className="text-vert59 text-2xl font-abel">{formatText(question.question)}</h2>
-                <div className="grid grid-cols-2 gap-4 my-11">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 my-11">
                     <>{incorrectAnswersList}</>
                     <div 
                     className="w-full flex justify-center items-center rounded-full shadow-sharpHover px-6 py-2.5 text-ombreNaturelle31/90 font-montserrat leading-tight border-2 border-vert59"
