@@ -8,7 +8,11 @@ export function formatText(str) {
     .replaceAll(/&oacute;/g, "o")
     .replaceAll(/&#039;/g, "'")
     .replaceAll(/&rsquo;/g, "'")
+    .replaceAll(/&lsquo;/g, "'")
+    .replaceAll(/&rdquo;/g, '"')
+    .replaceAll(/&ldquo;/g, '"')
     .replaceAll(/&lrm;/g, "")
     .replaceAll(/&amp;/g, "&")
-    .replaceAll(/&shy;/g, "");
+    .replaceAll(/&shy;/g, "")
+    .replaceAll(/&hellip;/g, "...");
 }
